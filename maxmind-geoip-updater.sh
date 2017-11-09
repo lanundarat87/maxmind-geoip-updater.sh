@@ -16,6 +16,8 @@ COUNTRY="GeoLite2-Country.tar.gz"
 CITY_DB="GeoLite2-City.mmdb"
 COUNTRY_DB="GeoLite2-Country.mmdb"
 
+echo `date`
+
 mkdir -p $TMP
 mkdir -p $DEST
 
