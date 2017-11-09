@@ -17,6 +17,7 @@ CITY_DB="GeoLite2-City.mmdb"
 COUNTRY_DB="GeoLite2-Country.mmdb"
 
 mkdir -p $TMP
+mkdir -p $DEST
 
 if [ -e $TMP/$CITY_MD5 ]; then
   rm $TMP/$CITY_MD5
