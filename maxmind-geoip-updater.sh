@@ -47,6 +47,7 @@ if [ ! -e $DEST/$CITY_DB ] || [ ! -e $DEST/$CITY_MD5 ] || [ "$(diff $TMP/$CITY_M
 
   if [ "$(diff $TMP/CITY_MD5 $TMP/$CITY_MD5)" == "" ]; then
     tar -xf $TMP/$CITY --no-same-owner --strip 1 -C $TMP
+    mv $DEST/$CITY_DB $DEST/$CITY_DB.old
     mv $TMP/$CITY_DB $DEST/$CITY_DB
     mv $TMP/$CITY_MD5 $DEST/$CITY_MD5
     OUT=0
@@ -73,6 +74,7 @@ if [ ! -e $DEST/$COUNTRY_DB ] || [ ! -e $DEST/$COUNTRY_MD5 ] || [ "$(diff $TMP/$
 
   if [ "$(diff $TMP/COUNTRY_MD5 $TMP/$COUNTRY_MD5)" == "" ]; then
     tar -xf $TMP/$COUNTRY --no-same-owner --strip 1 -C $TMP
+    mv $DEST/$COUNTRY_DB $DEST/$COUNTRY_DB.old
     mv $TMP/$COUNTRY_DB $DEST/$COUNTRY_DB
     mv $TMP/$COUNTRY_MD5 $DEST/$COUNTRY_MD5
     OUT=0
