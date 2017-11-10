@@ -44,7 +44,7 @@ if [ ! -e $DEST/$CITY_DB ] || [ ! -e $DEST/$CITY_MD5 ] || [ "$(diff $TMP/$CITY_M
   md5sum $TMP/$CITY | awk '{ printf $1 }' > $TMP/CITY_MD5
 
   if [ "$(diff $TMP/CITY_MD5 $TMP/$CITY_MD5)" == "" ]; then
-    tar -xf $TMP/$CITY --strip 1 -C $TMP
+    tar -xf $TMP/$CITY --no-same-owner --strip 1 -C $TMP
     mv $TMP/$CITY_DB $DEST/$CITY_DB
     mv $TMP/$CITY_MD5 $DEST/$CITY_MD5
     echo "City DB update complete"
@@ -69,7 +69,7 @@ if [ ! -e $DEST/$COUNTRY_DB ] || [ ! -e $DEST/$COUNTRY_MD5 ] || [ "$(diff $TMP/$
   md5sum $TMP/$COUNTRY | awk '{ printf $1 }' > $TMP/COUNTRY_MD5
 
   if [ "$(diff $TMP/COUNTRY_MD5 $TMP/$COUNTRY_MD5)" == "" ]; then
-    tar -xf $TMP/$COUNTRY --strip 1 -C $TMP
+    tar -xf $TMP/$COUNTRY --no-same-owner --strip 1 -C $TMP
     mv $TMP/$COUNTRY_DB $DEST/$COUNTRY_DB
     mv $TMP/$COUNTRY_MD5 $DEST/$COUNTRY_MD5
     echo "Country DB update complete"
