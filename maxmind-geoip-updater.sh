@@ -16,6 +16,8 @@ COUNTRY="GeoLite2-Country.tar.gz"
 CITY_DB="GeoLite2-City.mmdb"
 COUNTRY_DB="GeoLite2-Country.mmdb"
 
+OUT=1
+
 echo `date`
 
 mkdir -p $TMP
@@ -47,6 +49,7 @@ if [ ! -e $DEST/$CITY_DB ] || [ ! -e $DEST/$CITY_MD5 ] || [ "$(diff $TMP/$CITY_M
     tar -xf $TMP/$CITY --no-same-owner --strip 1 -C $TMP
     mv $TMP/$CITY_DB $DEST/$CITY_DB
     mv $TMP/$CITY_MD5 $DEST/$CITY_MD5
+    OUT=0
     echo "City DB update complete"
   else
     echo "New City DB MD5 not match, abort update"
@@ -72,6 +75,7 @@ if [ ! -e $DEST/$COUNTRY_DB ] || [ ! -e $DEST/$COUNTRY_MD5 ] || [ "$(diff $TMP/$
     tar -xf $TMP/$COUNTRY --no-same-owner --strip 1 -C $TMP
     mv $TMP/$COUNTRY_DB $DEST/$COUNTRY_DB
     mv $TMP/$COUNTRY_MD5 $DEST/$COUNTRY_MD5
+    OUT=0
     echo "Country DB update complete"
   else
     echo "New Country DB MD5 not match, abort update"
@@ -81,3 +85,5 @@ if [ ! -e $DEST/$COUNTRY_DB ] || [ ! -e $DEST/$COUNTRY_MD5 ] || [ "$(diff $TMP/$
 else
   echo "Country DB not need update"
 fi
+
+exit $OUT
