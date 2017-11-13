@@ -3,10 +3,10 @@
 TMP=/tmp/GeoLite2
 DEST=/etc/GeoLite2
 
-CITY_MD5_URL="http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz.md5"
-COUNTRY_MD5_URL="http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.tar.gz.md5"
-CITY_URL="http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz"
-COUNTRY_URL="http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.tar.gz"
+CITY_MD5_URL="https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz.md5"
+COUNTRY_MD5_URL="https://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.tar.gz.md5"
+CITY_URL="https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz"
+COUNTRY_URL="https://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.tar.gz"
 
 CITY_MD5="GeoLite2-City.tar.gz.md5"
 COUNTRY_MD5="GeoLite2-Country.tar.gz.md5"
