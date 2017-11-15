@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 TMP=/tmp/GeoLite2
 DEST=/etc/GeoLite2
 
